@@ -18,4 +18,21 @@ class itemBiblioteca:
             self.cadastrar = False
             print("Revista cadastrada com sucesso.")
 
-    
+    def listar_itens(self):
+        if self.listar_itens:
+            print("Nenhum item cadastrado.")
+        else:
+            self.cadastrar = False
+            print("\n--- Lista de Itens ---")
+            for item in item:
+                print(item)
+
+    def emprestar_Item(self):
+        if self.emprestar_Item:
+            codigo = input("Digite o código to item para emprestar: ")
+            item = buscar_item_por_codigo(itens, codigo)
+
+            if item:
+                item.emprestar()
+            else:
+                print("Item não encontrado.")
